@@ -8,26 +8,12 @@
 	font-size: 13px;
 	height: 19px;
 	padding-left: 4px;
+/*	position:absolute;*/
+/*	margin-bottom:5px;*/
 }
 
-#suggestionsBanner{
-	color:white;
-	font-family: 'Lucida Grande', Helvetica, Arial;
-	color:white;
-	background-color: #627AAD;
-	border-bottom: 1px solid lightGrey;
-	color: white;
-	font-family: 'Lucida Grande', Helvetica, Arial;
-	font-size: 13px;
-	height: 19px;
-	width:100%;
-}
 
-#suggestionsTitle{
-	padding-left:4px;
-}
-
-#suggestionsTitle, #scriptTitle{
+#scriptTitle{
 	
 	font-size: 13px;
 	font-weight: bold;
@@ -160,19 +146,26 @@
 }
 
 #editorTransformContainer > .suggestion:first-child .descriptionEditor{
-	padding-left:18px;
+	padding-left:0px;
 }
 
 .scriptTransform .descriptionEditor{
 	
 	padding-bottom:8px;
+/*	padding-top:5px;*/
 	padding-left:0px;
+/*	padding-right:4px;*/
 	width:80%;
 
 }
 
 .scriptTransform:first-child{
 	border-top:0px;
+	
+/*	margin-top:15px;*/
+/*	padding-top:15px;*/
+	
+	
 }
 
 .scriptTransform{
@@ -186,6 +179,7 @@
 	padding-bottom:10px;
 
 	padding-top:10px;
+/*	padding-left:18px;*/
 	padding-right:4px;
 }
 
@@ -207,7 +201,11 @@
 	background-image: url("images/downArrow.png");
 }
 .firstSuggestion.suggestion.selected .descriptionEditor, .firstSuggestion.suggestion .descriptionEditor, .scriptTransform .descriptionEditor{
+/*	background-image: url("images/rightArrow.png");*/
 	background-repeat:no-repeat;
+	
+	
+/*	background-position:left center;*/
 }
 
 .firstSuggestion.suggestion.emptySuggestion{
@@ -226,6 +224,7 @@
 }
 
 
+/*Menu Stuff*/
 
 .tmenu{
 	background: #627AAD;
@@ -258,7 +257,8 @@ div.tmenu{
 	padding-right: 11px;
 	padding-top: 0px;
 	background-color:#627AAD;
-
+/*	border:1px solid #627AAD;*/
+	
 }
 
 .tmenu span.clearMenu{
@@ -290,6 +290,8 @@ p.submenu{
 
 .openMenu{
 	background-color: #12ea31;
+/*	border:1px solid black;*/
+
 }
 
 a{
@@ -314,9 +316,10 @@ a{
 }
 
 .submenu{
-
+/*	padding-top:5px;*/
 }
 
+/*Menu Color Classes*/
 .green{background:#6AA63B url('images/green-item-bg.jpg') top left no-repeat;}
 .yellow{background:#FBC700 url('images/yellow-item-bg.jpg') top left no-repeat;}
 .red{background:#D52100 url('images/red-item-bg.jpg') top left no-repeat;}
@@ -361,6 +364,8 @@ a{
 }
 
 #scriptContainer{
+/*	height:25%;*/
+/*	min-height:25%;*/
 	max-height:40%;
 	overflow-y:hidden;
 	overflow-x:hidden;
@@ -368,6 +373,7 @@ a{
 
 #editorTransformContainer{
 	overflow-y:hidden;
+	max-height:60%;
 }
 
 #suggestionsContainer{
@@ -377,6 +383,7 @@ a{
 
 #scriptTransformContainer{
 	height:30%;
+/*	min-height:25%;*/
 	max-height:30%;
 	overflow-y:auto;
 	overflow-x:hidden;
@@ -387,5 +394,5 @@ a{
 	height:60%;
 	min-height:60%;
 	max-height:60%;
-    overflow-y:hidden;
+
 }

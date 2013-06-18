@@ -551,7 +551,6 @@ div.box {
 
 td{
 	border:1px solid #ababab;
-	padding-left:2px;
 	font-family:     "Courier New"
 		                    Courier
 		                    monospace;
@@ -626,12 +625,6 @@ tr.previewKey th, tr.previewKey td, td.previewKey, th.previewKey{
 tr.previewDeleted td, td.previewDeleted{
 	background-color: #FFEBE8;
 	border-color: #DD3C10;
-	opacity:.65;
-}
-
-.previewBeforeTable tr.previewDeleted td, .previewBeforeTable td.previewDeleted{
-	background-color: #D9C0D9;
-	border-color: #EE81EE;
 	opacity:.65;
 }
 
@@ -739,13 +732,13 @@ td{
 /*	display: block;*/
 	empty-cells:show;
 	font-family: Monaco, 'Courier New';
-	font-size: 14px;
+	font-size: 12px;
 	max-height: 16px;
 	min-height: 16px;
 	min-width: 90%;
 	overflow: hidden;
-	padding: 0px 0px 0px 0px;
-/*	padding: 6px 0px 6px 0px;*/
+	padding-left: 0px;
+	padding-right: 3px;
 }
 
 th{
@@ -876,37 +869,23 @@ thead{
 /***Pagination ****/
 
 span.paginate_button, span.table_size_indicator{
-/*	background-color: #EFEFEF;*/
+	background-color: #EFEFEF;
 	font-family: 'Lucida Grande', Helvetica, Arial;
-/*	float:left;*/
+	float:left;
 	height:18px;
 	font-size:14px;
 	width:45px;
 	text-align:center;
-	margin-right:8px;
-/*	margin:12px 0px 0px 2px;*/
+	margin:12px 0px 0px 2px;
 	cursor:hand;
-	
 }
 
 span.table_size_indicator{
 	width:120px;
-	margin-right:20px;
+	margin-right:10px;
 }
 
-#table_controls{
-	color:black;
-	font-family: 'Lucida Grande', Helvetica, Arial;
-	background-color: #EFEFEF;
-/*	background-color: #627AAD;*/
-	border-bottom: 1px solid lightGrey;
 
-	font-family: 'Lucida Grande', Helvetica, Arial;
-	font-size: 13px;
-	height: 19px;
-	width:93%;
-	padding-left:35px;
-}
 
 
 

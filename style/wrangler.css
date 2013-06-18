@@ -4,20 +4,12 @@
 	padding:0px;
 }
 
-.ui-layout-north{
-	padding:0px;
-	
-}
-
-
 #wranglerTitleDiv{
 	font-family: 'Lucida Grande';
 	font-size: 22px;
 	font-weight: bold;
-	padding:0px 0px 0px 4px;
-
-	display:inline-block;
-
+	padding:10px 0px 0px 4px;
+/*	float:left;*/
 }
 
 #wranglerTitle1{
@@ -31,11 +23,27 @@
 #wranglerHelpLink{
 	color: #555;
 	font-size:18px;
+/*	margin-top:10px;*/
 	padding-top:4px;
 	float:right;
 	margin-right:30px;
+/*	margin-left:106px;*/
 }
 	
+#profilerWestPanel{
+	overflow-y:hidden;
+	overflow-x:hidden;
+}
+
+#profilerCenterPanel{
+
+	overflow-y:hidden;
+	max-height:90%;
+	overflow-x:auto;
+	border-bottom:0px;
+	border-right:0px;
+
+}
 
 #table{
 	overflow-x:auto;
@@ -71,6 +79,7 @@
 	height: 90%;
 	margin-left: 5%;
 	margin-top: 5%;
+/*	padding: 7px 0px;*/
 	width: 90%;
 	font-family: 'Lucida Grande', Helvetica, Arial;
 }
@@ -90,10 +99,11 @@
 }
 
 #scriptInstructions{
-
+/*	padding-left:10%;*/
 	padding-top:15px;
 	margin-top:0px;
-	color:#666;
+	cursor:pointer;
+	color:#D55;
 }
 
 #uploadPrompt{
@@ -111,6 +121,61 @@
 	color:#000000;
 
 }
+
+/*
+.ui-corner-right {
+border-bottom-right-radius: 1px 1px;
+border-top-right-radius: 1px 1px;
+}
+
+input, input[type="password"], input[type="search"], isindex {
+-webkit-appearance: textfield;
+-webkit-rtl-ordering: logical;
+-webkit-user-select: text;
+background-color: white;
+border: 2px inset;
+cursor: auto;
+padding: 0px;
+}
+
+
+button.ui-button-icon-only {
+	width: 1em;
+	height:.8em;
+	padding-top:0px;
+	padding-bottom:0px;
+	margin-left:1px;
+	
+}
+
+.ui-button-icon-only .ui-icon, .ui-button-text-icon .ui-icon, .ui-button-text-icons .ui-icon, .ui-button-icons-only .ui-icon {
+margin-top: -8px;
+position: absolute;
+top: 50%;
+}
+
+.ui-button-icon-only .ui-button-text, .ui-button-icons-only .ui-button-text {
+padding: 0.0em;
+text-indent: -1e+07px;
+}
+.ui-widget {
+	font-family: 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	font-size: 10px;
+}
+
+.ui-icon {
+background-image: url(file://localhost/Users/skandel/Documents/projects/datavore/wrangler/lib/ThemeRoller/css/redmond/images/ui-icons_469bdd_256x240.png);
+height: 14px;
+width: 14px;
+}
+
+.ui-button-icon-only .ui-icon, .ui-button-text-icon .ui-icon, .ui-button-text-icons .ui-icon, .ui-button-icons-only .ui-icon {
+margin-top: -8px;
+position: absolute;
+top: 50%;
+}*/
+
+
 
 
 
@@ -259,6 +324,9 @@ font-size: 12px;
 
 }
 
+/*.dataTables_wrapper{
+	overflow
+}*/
 
 .fillBefore_image{
 		background-image:url("images/fillBefore.png");
@@ -383,17 +451,12 @@ font-size: 12px;
 }
 
 .wranglerExampleOptions{
+/*	margin-left:15px;*/
 	font-size:16px;
 	border: 1px solid #BDC7D8;
 	font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
 	margin-bottom:-2px;
-}
-
-.wranglerModeSelect{
-  font-size:16px;
-  border: 1px solid #BDC7D8;
-  font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
-  margin-bottom:-2px;
+/*	margin-left:35%;*/
 }
 
 .demoOptions{
@@ -410,104 +473,5 @@ font-size: 12px;
 a.runtimeLink{
 	font-weight:bold;
 	color:black;
-}
-a.runtimeLink:hover { color: #D55; }
-
-.terminal {
-	font-family: Andale Mono, Courier New;
-	font-weight: bold;
-	font-size: 14px;
-	color: #000;
-}
-
-div.menu_group {
-	display:inline;
-	font-family:'Lucida Grande', Helvetica, Arial;
-	height:100%;
-	max-height:100%;
-	padding-top:4px;
-	margin-top:4px	;
-
-}
-
-div#menu{
-	padding-top:0px;
-	margin-top:0px;
-	max-height:35px;
-	height:35px;
-	min-height:35px;
-	background-color:#627AAD;
-	min-width:100%;
-	width:100%;
-	display:inline-block;
-	white-space: nowrap;
-}
-
-div.menu_option {
-	display:inline-block;
-	padding-left:16px;
-	font-size:14px;
-	padding-top:8px;
-	padding-bottom:8px;
-	padding-right:16px;
-	height:100%;
-	cursor:pointer;
-}
-
-div.selected_menu_option, div.menu_option:hover {
-	color:#627AAD;
-	background-color: #EFEFEF;
-	cursor:pointer;
-}
-
-#wranglerDashboard{
-	color:white;
-	min-height:90px;
-	background-color: #EFEFEF;
-	font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;	
-	font-size:14px;
-	min-width:100%;
-	width:100%;
-			overflow-x:hidden;
-}
-
-#wranglerDashboard input{
-	border:1px solid #BDC7D8;
-	padding: 3px 3px 3px 3px;
-	font-size:14px;
-}
-
-#wranglerDashboard .label{
-	color:#1D2A5B;
-	margin-bottom:4px;
-}
-
-#wranglerDashboard select{
-	border: 1px solid #BDC7D8;
-	padding: 3px 3px 3px 3px;
-	font-size:14px;
-		overflow-x:hidden;
-}
-
-.detail_editor_container{
-	margin-top:10px;
-	
-	margin-left:10px;
-    white-space: nowrap;
-	overflow-x:hidden;
-}
-
-.editor_wrapper {
-	display:inline-block;
-	padding-right:4px;
-
-
-}
-
-.editor_wrapper .label{
-	color:black;
-}
-
-.ui-layout-north{
-	background-color: #EFEFEF;
+/*	font-size:10px;*/
 }

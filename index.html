@@ -11,12 +11,20 @@
 <script type="text/javascript" src="lib/Highlight/highlight.js"></script>
 <script type="text/javascript" src="lib/layout/jquery.layout.min.js"></script>
 <script type="text/javascript" src="lib/hoverIntent/hoverIntent.js"></script>
+<!-- <script type="text/javascript" src="lib/Date/date.js"></script> -->
 
 <script type="text/javascript" language="javascript" src="lib/DataTable/media/js/jquery.dataTables.js"></script>
 <script type="text/javascript" src="lib/d3/d3.min.js">  </script>
 <script type="text/javascript" src="lib/datavore/datavore-r0.1.js">  </script>
-<script type="text/javascript" src="dw.js">  </script>
+<script type="text/javascript" src="dw-r0.1.js">  </script>
 <script type="text/javascript" src="test/crime.js">  </script>
+
+
+
+
+
+
+
 
 <script type="text/javascript">  
 
@@ -34,15 +42,17 @@ $(document).ready(function() {
 	
 	myLayout = $('body').layout({
 		north: {
-				spacing_open:			0
+				spacing_open:			0			// cosmetic spacing
 			,	resizable: 				false
 			,	slidable:				false
+			//	override default effect
 			,	fxName:					"none"
 			},
 			south: {
-					spacing_open:			0
+					spacing_open:			0			// cosmetic spacing
 				,	resizable: 				false
 				,	slidable:				false
+				//	override default effect
 				,	fxName:					"none"
 				},
 			west: {
@@ -65,7 +75,6 @@ $(document).ready(function() {
 			table:dt,
 			transformContainer:jQuery('#transformEditor'),
 			previewContainer:previewContainer,
-      dashboardContainer:jQuery("#wranglerDashboard"),
 			initial_transforms:initial_transforms
 		})
 
@@ -119,21 +128,27 @@ $(document).ready(function() {
 		var select = dw.jq('select').addClass('wranglerExampleOptions');
 		var selectPrompt = dw.jq('span').append('Example Data:').addClass('wranglerPrompt');
 		jQuery('#table').append(upload)
-
+		
+		//upload.append(dw.jq('span').attr('id','wranglerPrompt').append('Paste data below to begin wrangling...or try an example'))
 		var prompt = dw.jq('div').attr('id','uploadPrompt').append('Paste data below to begin wrangling').addClass('wranglerPrompt');
 		upload.append(prompt)
 		
 		upload.append(selectPrompt).append(select)
-
+		
+		// upload.append(dw.jq('span').append(' try an example').addClass('wranglerPrompt').addClass('demoOptions').click(function(){
+		// 		jQuery(this).replaceWith(select)
+		// 		
+		// 		prompt.hide();
+		// 	}))
+		
+		//upload.append(select)
 		upload.append(dw.jq('button').attr('id','wranglerInputSubmit').append('Wrangle'))
 		
 
 		
 		var inputArea = dw.jq('textArea').attr('id','wranglerInput');
 		upload.append(inputArea)
-
 		inputArea.attr('value', crime)		
-
 		jQuery('button').click(function(){
 			var val = inputArea.attr(
 				'value');
@@ -141,7 +156,12 @@ $(document).ready(function() {
 			var dt = dv.table(val)
 
 			initial_transforms = dw.raw_inference(val).transforms
+//			 initial_transforms = initial_transforms.concat([dw.set_name().header_row(0)])
+			// initial_transforms = initial_transforms.concat([dw.merge(['split', 'split1'])])
+			//initial_transforms = initial_transforms.concat([dw.filter(dw.rowIndex([0,1,2]))])
 
+			// initial_transforms = initial_transforms.concat([dw.merge(['split', 'split1'])])
+			// initial_transforms = initial_transforms.concat([dw.drop('merge')])
 			startWrangler(dt)			
 		})
 		
@@ -149,7 +169,16 @@ $(document).ready(function() {
 
 
 		var add_export_option = function(type, name){
+			//var extype = dw.jq('span').addClass('exportHeader').append(type);
+			
 			dw.add_select_option(select, name, type);
+			
+			
+
+
+			
+//			upload.append(extype)			
+
 		}
 		
 		select.change(function(){
@@ -158,26 +187,38 @@ $(document).ready(function() {
 			jQuery(this).addClass('selectedExportHeader')
 			
 		})
+		
+
+
 		add_export_option(crime, 'Crime');
 		add_export_option(labor, 'Labor');
 		add_export_option(migration, 'Migration');
 
+	
+
+
+
+
+
+	
+	
 })
 
 
 
 </script>
 
-<head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	
-	<title>DataWrangler</title>
 
-</head>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<!-- <link rel="shortcut icon" type="image/ico" href="abc" /> -->
+		
+		<title>DataWrangler</title>
 	
+	</head>
 	
 	
 	
@@ -185,10 +226,11 @@ $(document).ready(function() {
 	<body id="dt_example">
 		
 			<div class="ui-layout-north" id='wranglerNorthPanel'>
-
-        <div id='wranglerDashboard'>
-	
-        </div>
+				<div id='wranglerTitleDiv'>
+					<span id='wranglerTitle1'>Data</span><span id='wranglerTitle2'>Wrangler</span>
+										<a id='wranglerHelpLink' href='help.html' target=”_blank”>Help</a>
+				</div>
+				<div class='clear'></div>
 
 			</div>
 
