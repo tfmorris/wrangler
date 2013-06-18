@@ -1,0 +1,449 @@
+<link type="text/css" href="../lib/ThemeRoller/css/redmond/jquery-ui-1.8.1.custom.css" rel="stylesheet" />
+<link type="text/css" href="../lib/ThemeRoller/plugins/selectmenu/ui.selectmenu.css" rel="stylesheet"/>
+
+
+<style>
+/*.ui-button { margin-left: -1px; }*/
+/*.ui-button-icon-only .ui-button-text { padding: 0.35em; } */
+/*.ui-autocomplete-input { margin: 0; padding: 0.48em 0 0.47em 0.45em; }*/
+</style>
+
+
+<script type="text/javascript" src="../lib/ThemeRoller/js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="../lib/ThemeRoller/js/jquery-ui-1.8.1.custom.min.js"></script>
+<script type="text/javascript" src="../lib/Highlight/highlight.js"></script>
+
+<link type="text/css" href="../lib/tooltip/tip-darkgray/tip-darkgray.css" rel="stylesheet"/>
+
+<script type="text/javascript" src="../lib/hoverIntent/hoverIntent.js"></script>
+<!-- <script type="text/javascript" src="../lib/Date/date.js"></script> -->
+
+
+
+<script type="text/javascript" src="../lib/layout/jquery.layout.min.js"></script>
+
+<script type="text/javascript" src="../lib/d3/d3.min.js">  </script>
+
+<script type="text/javascript" src="../lib/datavore/src/dv.js">  </script>
+<script type="text/javascript" src="../lib/datavore/src/util.js">  </script>
+<script type="text/javascript" src="../lib/datavore/src/table.js">  </script>
+<script type="text/javascript" src="../lib/datavore/src/query.js">  </script>
+<script type="text/javascript" src="../lib/datavore/test/tables.js">  </script>
+
+
+
+
+<script type="text/javascript" src="../src/dw.js">  </script>
+<script type="text/javascript" src="../src/util.js">  </script>
+<script type="text/javascript" src="../src/regex/inference.js">  </script>
+<script type="text/javascript" src="../src/regex/match.js">  </script>
+
+<script type="text/javascript" src="../src/wrangle.js">  </script>
+
+<script type="text/javascript" src="../src/transform/transform.js">  </script>
+<script type="text/javascript" src="../src/transform/map.js">  </script>
+<script type="text/javascript" src="../src/transform/textPattern.js">  </script>
+<script type="text/javascript" src="../src/transform/fill.js">  </script>
+<script type="text/javascript" src="../src/transform/translate.js">  </script>
+<script type="text/javascript" src="../src/transform/fold.js">  </script>
+<script type="text/javascript" src="../src/transform/merge.js">  </script>
+<script type="text/javascript" src="../src/transform/split.js">  </script>
+<script type="text/javascript" src="../src/transform/extract.js">  </script>
+<script type="text/javascript" src="../src/transform/cut.js">  </script>
+<script type="text/javascript" src="../src/transform/filter.js">  </script>
+<script type="text/javascript" src="../src/transform/copy.js">  </script>
+<script type="text/javascript" src="../src/transform/row.js">  </script>
+<script type="text/javascript" src="../src/transform/drop.js">  </script>
+<script type="text/javascript" src="../src/transform/reduce.js">  </script>
+<script type="text/javascript" src="../src/transform/unfold.js">  </script>
+<script type="text/javascript" src="../src/transform/schema.js">  </script>
+<script type="text/javascript" src="../src/transform/update.js">  </script>
+<script type="text/javascript" src="../src/transform/sort.js">  </script>
+<script type="text/javascript" src="../src/transform/transpose.js">  </script>
+<script type="text/javascript" src="../src/table/vtable.js">  </script>
+<script type="text/javascript" src="../src/table/preview.js">  </script>
+<script type="text/javascript" src="../src/table/selection.js">  </script>
+
+<script type="text/javascript" src="../src/io/export.js">  </script>
+
+
+<script type="text/javascript" src="../src/corpus/corpus.js">  </script>
+
+<script type="text/javascript" src="../src/inference/engine.js">  </script>
+<script type="text/javascript" src="../src/inference/row_inference.js">  </script>
+<script type="text/javascript" src="../src/inference/edit_inference.js">  </script>
+<script type="text/javascript" src="../src/inference/raw.js">  </script>
+<script type="text/javascript" src="../src/inference/schema.js">  </script>
+
+<script type="text/javascript" src="../src/editor/editor.js">  </script>
+<script type="text/javascript" src="../src/editor/script.js">  </script>
+<script type="text/javascript" src="../src/editor/tmenu.js">  </script>
+<script type="text/javascript" src="../src/editor/descriptionEditor.js">  </script>
+<script type="text/javascript" src="../src/editor/detail_editor.js">  </script>
+<script type="text/javascript" src="../src/editor/clause/clause.js">  </script>
+<script type="text/javascript" src="../src/editor/clause/text.js">  </script>
+<script type="text/javascript" src="../src/editor/clause/row.js">  </script>
+<script type="text/javascript" src="../src/editor/clause/regex.js">  </script>
+<script type="text/javascript" src="../src/editor/clause/column.js">  </script>
+<script type="text/javascript" src="../src/editor/clause/select.js">  </script>
+<script type="text/javascript" src="../src/editor/clause/select_other.js">  </script>
+<script type="text/javascript" src="../src/editor/clause/key.js">  </script>
+<script type="text/javascript" src="../src/editor/clause/input.js">  </script>
+<script type="text/javascript" src="../src/editor/combo_suggest.js">  </script>
+<script type="text/javascript" src="../src/wrangler.js">  </script>
+
+
+<script type="text/javascript" src="crime.js">  </script>
+
+<style type="text/css" title="currentStyle">
+
+
+	@import "../lib/DataTable/media/css/demo_table.css";
+	@import "../style/layout.css";
+	@import "../style/table.css";
+	@import "../style/editor.css";
+	@import "../style/wrangler.css";
+</style>
+
+
+
+<script type="text/javascript" language="javascript" src="../lib/DataTable/media/js/jquery.dataTables.js"></script>
+
+<script type="text/javascript">  
+
+var w = dw.wrangle()
+
+var myLayout; 
+
+$(document).ready(function() {
+	
+	var browserName=navigator.appName;
+	
+	var isSupported = navigator.userAgent.match(/Chrome|Safari|Firefox/);
+
+	if(isSupported===null) alert('Data Wrangler has only been tested in Chrome, Safari and Firefox.  For best performance, we recommend you use Chrome or Safari.')
+	
+	myLayout = $('body').layout({
+		north: {
+				spacing_open:			0			// cosmetic spacing
+			,	resizable: 				false
+			,	slidable:				false
+			//	override default effect
+			,	fxName:					"none"
+			},
+			south: {
+					spacing_open:			0			// cosmetic spacing
+				,	resizable: 				false
+				,	slidable:				false
+				//	override default effect
+				,	fxName:					"none"
+				},
+			west: {
+				minSize: 310
+			}	
+	});
+
+	
+	
+
+	var container = jQuery('#table')
+	var previewContainer = jQuery('#preview')
+
+	var initial_transforms = [];
+
+	var startWrangler = function(dt){
+
+		dw.wrangler({
+			tableContainer:container,
+			table:dt,
+			transformContainer:jQuery('#transformEditor'),
+			previewContainer:previewContainer,
+			initial_transforms:initial_transforms
+		})
+
+	}
+
+
+
+	var hash = window.location.hash.substr(0), initial_transforms, name = hash;
+	if(hash.length){
+		var tindex = hash.indexOf('_');
+		var name;
+		if(tindex!=-1){
+			index = Number(hash.substr(tindex+1))-1;
+
+			name = hash.substr(1, tindex-1)
+			
+			if(name==='crime'){
+				initial_transforms = [
+					dw.filter(dw.empty()),
+					dw.extract('Year').after(/in /).on(/.*/),
+					dw.set_name('extract', ['State']),
+					dw.fill('State'),
+					dw.filter(dw.starts_with('Year', 'Reported', true)),
+					dw.unfold('Year').measure(['Property_crime_rate'])
+				]
+				
+			}
+			else if(name==='sat'){
+				initial_transforms = [
+					dw.filter(dw.rowIndex([0,1]))
+					,
+					dw.fill().row(dw.row(dw.rowIndex([0]))).direction(dw.RIGHT)
+				]
+			}
+			initial_transforms = initial_transforms.slice(0, index)
+		}
+		else{
+			name = hash.substr(1)
+		}
+		var dt = dv.examples[name] || tfill;
+		startWrangler(dt);
+	}
+	else{
+
+
+		jQuery('#preview').hide()
+
+		var upload = dw.jq('div').attr('id', 'uploadContainer')
+		
+		
+		var select = dw.jq('select').addClass('wranglerExampleOptions');
+		var selectPrompt = dw.jq('span').append('Example Data:').addClass('wranglerPrompt');
+		jQuery('#table').append(upload)
+		
+		//upload.append(dw.jq('span').attr('id','wranglerPrompt').append('Paste data below to begin wrangling...or try an example'))
+		var prompt = dw.jq('div').attr('id','uploadPrompt').append('Paste data below to begin wrangling').addClass('wranglerPrompt');
+		upload.append(prompt)
+		
+		upload.append(selectPrompt).append(select)
+		
+		// upload.append(dw.jq('span').append(' try an example').addClass('wranglerPrompt').addClass('demoOptions').click(function(){
+		// 		jQuery(this).replaceWith(select)
+		// 		
+		// 		prompt.hide();
+		// 	}))
+		
+		//upload.append(select)
+		upload.append(dw.jq('button').attr('id','wranglerInputSubmit').append('Wrangle'))
+		
+
+		
+		var inputArea = dw.jq('textArea').attr('id','wranglerInput');
+		upload.append(inputArea)
+		inputArea.attr('value', unfold)		
+//		jQuery('button').click(function(){
+			var val = inputArea.attr(
+				'value');
+
+			var dt = dv.table(val)
+
+			initial_transforms = dw.raw_inference(val).transforms
+			// initial_transforms = initial_transforms.concat(
+			// 		[	dw.fold().column(["split1","split2","split3","split4","split5","split6"])
+			// 				.table(0)
+			// 				.status("active")
+			// 				.drop(false)
+			// 				.keys([0]),
+			// 				dw.extract().column(["fold"])
+			// 					.table(0)
+			// 					.status("active")
+			// 					.drop(false)
+			// 					.result("column")
+			// 					.update(false)
+			// 					.insert_position("right")
+			// 					.row(undefined)
+			// 					.on(undefined)
+			// 					.before(undefined)
+			// 					.after(undefined)
+			// 					.ignore_between(undefined)
+			// 					.which(1)
+			// 					.max(1)
+			// 					.positions([1,4]),
+			// 				
+			// 					dw.cut().column(["fold"])
+			// 					.table(0)
+			// 					.status("active")
+			// 					.drop(false)
+			// 					.result("column")
+			// 					.update(true)
+			// 					.insert_position("right")
+			// 					.row(undefined)
+			// 					.on(undefined)
+			// 					.before(undefined)
+			// 					.after(undefined)
+			// 					.ignore_between(undefined)
+			// 					.which(1)
+			// 					.max(1)
+			// 					.positions([1,4]),
+			// 					
+			// 					dw.update().column(["fold"])
+			// 						.table(0)
+			// 						.status("active")
+			// 						.drop(false)
+			// 						.result("column")
+			// 						.update(true)
+			// 						.insert_position("right")
+			// 						.row(undefined)
+			// 						.on(undefined)
+			// 						.before(undefined)
+			// 						.after(undefined)
+			// 						.ignore_between(undefined)
+			// 						.which(1)
+			// 						.max(1)
+			// 						.positions(undefined)
+			// 						.to(undefined)
+			// 						.update_method("LOWER"),
+			// 						dw.update().column(["extract"])
+			// 							.table(0)
+			// 							.status("active")
+			// 							.drop(false)
+			// 							.result("column")
+			// 							.update(true)
+			// 							.insert_position("right")
+			// 							.row(dw.row().column([])
+			// 							.table(0)
+			// 							.status("active")
+			// 							.drop(false)
+			// 							.conditions([dw.is_null().column([])
+			// 							.table(0)
+			// 							.status("active")
+			// 							.drop(false)
+			// 							.lcol("extract")
+			// 							.value(undefined)
+			// 							])
+			// 							)
+			// 							.on(undefined)
+			// 							.before(undefined)
+			// 							.after(undefined)
+			// 							.ignore_between(undefined)
+			// 							.which(1)
+			// 							.max(1)
+			// 							.positions(undefined)
+			// 							.to("Total")
+			// 							.update_method(undefined)
+			// 						,
+			// 						dw.unfold('extract').measure('value'),
+			// 						dw.sort('split')
+			// 						
+			// 				
+			// 				
+			// 			]
+			// 		
+			// 		)
+			
+			
+//			 initial_transforms = initial_transforms.concat([dw.set_name().header_row(0)])
+			// initial_transforms = initial_transforms.concat([dw.merge(['split', 'split1'])])
+			//initial_transforms = initial_transforms.concat([dw.filter(dw.rowIndex([0,1,2]))])
+
+			// initial_transforms = initial_transforms.concat([dw.merge(['split', 'split1'])])
+			// initial_transforms = initial_transforms.concat([dw.drop('merge')])
+			startWrangler(dt)			
+//		})
+		
+	}
+
+
+		var add_export_option = function(type, name){
+			//var extype = dw.jq('span').addClass('exportHeader').append(type);
+			
+			dw.add_select_option(select, name, type);
+			
+			
+
+
+			
+//			upload.append(extype)			
+
+		}
+		
+		select.change(function(){
+			inputArea.attr('value', select.val())
+			jQuery('.exportHeader').removeClass('selectedExportHeader');				
+			jQuery(this).addClass('selectedExportHeader')
+			
+		})
+		
+
+
+		add_export_option(crime, 'Crime');
+		add_export_option(labor, 'Labor');
+		add_export_option(migration, 'Migration');
+
+	
+
+
+
+
+
+	
+	
+})
+
+
+
+</script>
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<!-- <link rel="shortcut icon" type="image/ico" href="abc" /> -->
+		
+		<title>DataWrangler</title>
+	
+	</head>
+	
+	
+	
+	
+	<body id="dt_example">
+		
+			<div class="ui-layout-north" id='wranglerNorthPanel'>
+				<div id='wranglerTitleDiv'>
+					<span id='wranglerTitle1'>Data</span><span id='wranglerTitle2'>Wrangler</span>
+										<a id='wranglerHelpLink' href='help.html' target=”_blank”>Help</a>
+				</div>
+				<div class='clear'></div>
+
+			</div>
+
+
+			<div class="ui-layout-west" id='profilerWestPanel'>
+
+					<div id="transformEditor" class='transformEditor'>
+
+					</div>
+
+			</div>
+
+
+
+
+			<div class="ui-layout-center" id='profilerCenterPanel'>
+			
+				<div id="table"></div>
+				<div id="preview"></div>
+				<div class="spacer"></div>
+
+
+
+
+			</div>	
+			
+
+			<div class="ui-layout-south">
+
+			</div>
+
+			
+			
+			
+	
+		
+	</body>
+</html>
+
