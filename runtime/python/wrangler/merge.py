@@ -1,5 +1,5 @@
 from map import Map
-import re
+
 class Merge(Map):
 	def __init__(self):
 		super(Merge,self).__init__()

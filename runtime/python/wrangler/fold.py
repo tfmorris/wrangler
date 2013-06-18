@@ -14,7 +14,7 @@ class Fold(Transform):
 		table = tables[0]
 		
 		new_index = 0
-		names = [c.name for c in table]
+		names = [c.name for c in columns]
 		rows = table.rows()
 		start_row = 0
 		end_row = table.rows()
@@ -24,7 +24,7 @@ class Fold(Transform):
 		
 		
 		key_values = []
-		for col in table:
+		for col in columns:
 			col_key_vals = []
 			for key in keys:
 				val = (col.name if key==-1 else col[key])
@@ -36,6 +36,8 @@ class Fold(Transform):
 		
 		foundLeft = False;
 		other_cols = []
+		
+
 		
 		for col in table:
 
@@ -56,12 +58,11 @@ class Fold(Transform):
 			if(not row in keys):
 				for k in range(0, len(columns)):
 					for c in range(0, len(other_cols)):
-						col = other_cols[c];
+						col = other_cols[c]
 						
-						col[new_index] = table[col.name][row];
+						col[new_index] = table[col.name][row]
 					
 					for j in range(0, len(key_cols)):
-						
 						key_cols[j][new_index] = key_values[k][j]
 					
 					value_col[new_index] = columns[k][row]
@@ -82,13 +83,13 @@ class Fold(Transform):
 		key_cols.append(value_col)
 		
 
-		
+		for col in other_cols:
+			table.insert_column(col, {'index':updateIndex})		
 		
 		for col in key_cols:
-			table.insert_column(col, {'index':updateIndex})
-
-
-		for col in other_cols:
 			table.insert_column(col, {})
+
+
+
 
 	

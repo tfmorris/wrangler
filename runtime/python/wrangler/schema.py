@@ -1,8 +1,8 @@
 from transform import Transform
 import re
 class SetName(Transform):
-	def __init__(self, **kw_args):
-		super(SetName,self).__init__(kw_args)
+	def __init__(self):
+		super(SetName,self).__init__()
 		self.name = 'SetName'
 		self['drop'] = True
 	def apply(self, tables):

@@ -2,10 +2,8 @@ from table import Table, Column
 
 
 class Transform(object):
-	def __init__(self, **kw_args):
-		self.parameters = {}
-		for kw in kw_args:
-			self.parameters[kw] = kw_args[kw]
+	def __init__(self):
+		self.parameters = {};
 		
 	def __getitem__(self, i):
 		try:

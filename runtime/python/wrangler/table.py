@@ -94,7 +94,22 @@ class Table:
 	def row(self,r):
 		return [c[r] for c in self.data]
 
+
+	def csv(self):
+
+		x = [','.join([c.name for c in self.data])+'\n']
+
+		for row in range(0, self.rows()):
+			vals = self.row(row)
+			vals = ['"'+v+'"' if v else '' for v in vals]
+			x.append(','.join(vals) +'\n')
+			
+		return ''.join(x)
+
 	def debug(self):
+		
+		print '\t'.join([c.name for c in self.data])+'\n'
+		
 		for row in range(0, self.rows()):
 			vals = self.row(row)
 			vals = [v if v else '' for v in vals]
@@ -108,8 +123,14 @@ class Column:
 		self.role = r
 	
 	def __getitem__(self, i):
-		return self.data[i]
-		
+		try:
+			return self.data[i]
+		except IndexError:
+			l = len(self.data)
+			if(i >= l):
+				for j in range(l, i+1):
+					self.data.append('')
+			return ''
 	def __setitem__(self, i, v):
 		l = len(self.data)
 		if(i >= l):

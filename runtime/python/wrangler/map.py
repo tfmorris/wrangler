@@ -1,6 +1,6 @@
-import transform
+from transform import Transform, TableUpdater
 
-class Map(transform.Transform):
+class Map(Transform):
 	def __init__(self):
 		super(Map,self).__init__()
 		
@@ -9,7 +9,7 @@ class Map(transform.Transform):
 		columns = self.get_columns(tables)
 		table = tables[0]
 		
-		updater = transform.TableUpdater(self, table, columns)
+		updater = TableUpdater(self, table, columns)
 		
 
 		
